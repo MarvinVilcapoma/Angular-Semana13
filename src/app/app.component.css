@@ -1,0 +1,10 @@
+.alert-danger {
+    color: #721c24;
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    margin: 5px;
+    border-radius: 3px 3px 3px 3px;
+}
+.container-error-message {
+    padding: 3px;
+}

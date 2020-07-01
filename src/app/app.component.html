@@ -1,0 +1,87 @@
+<head>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<div class="container py-5">
+  <form [formGroup]= "angForm" class="row justify-content-center">
+    <div class="form-group col-md-4">
+      <label>
+        <span>Nombres</span><br>
+        <input type="text" placeholder="Nombres" formControlName="nombre" class="form-control" #nombre>
+        <div style="color: #f00;" *ngIf="angForm.get('nombre').hasError('required') && angForm.get('nombre').touched">Por favor escribe un nombre válido</div>
+      </label>
+    </div>
+    <div class="form-group col-md-4">
+      <label>
+        <span>Primer Apellido</span><br>
+        <input type="text" placeholder="Primer Apellido" formControlName="primerapellido" class="form-control" #primerapellido>
+        <div style="color: #f00;" *ngIf="angForm.get('primerapellido').hasError('required') && angForm.get('primerapellido').touched">Por favor escribe un primer apellido válido</div>
+      </label>
+    </div>
+    <div class="form-group col-md-4">
+      <label>
+        <span>Segundo Apellido</span><br>
+        <input type="text" placeholder="Segundo Apellido" formControlName="segundoapellido" class="form-control" #segundoapellido>
+        <div style="color: #f00;" *ngIf="angForm.get('segundoapellido').hasError('required') && angForm.get('segundoapellido').touched">Por favor escribe un segundo apellido válido</div>
+      </label>
+    </div>
+    <div class="form-group col-md-4">
+      <label>
+        <span>4 ultimos digitos del SSN</span><br>
+        <input type="text" placeholder="4 ultimos digitos del SSN" formControlName="digitosSSN"class="form-control" #digitosSSN>
+        <div style="color: #f00;" *ngIf="angForm.get('digitosSSN').hasError('required') && angForm.get('digitosSSN').touched">Por favor escribe un SSN válido</div>
+      </label>
+    </div>
+    <div class="form-group col-md-8">
+      <label>
+        <span>Codigo Postal</span><br>
+        <input type="text" placeholder="Codigo Postal" formControlName="codigopostal" class="form-control" #codigopostal>
+        <div style="color: #f00;" *ngIf="angForm.get('codigopostal').hasError('required') && angForm.get('codigopostal').touched">Por favor escribe un código postal válido</div>
+      </label>
+    </div>
+    <div class="form-group col-md-4">
+        <label>Fecha de Nacimiento</label>
+        <input type="date" class="form-control" name="fechanacimiento"placeholder="Fecha de Nacimiento" formControlName='fechanacimiento' #fechanacimiento/>
+        <div style="color: #f00;" *ngIf="angForm.get('primerapellido').hasError('required') && angForm.get('primerapellido').touched">Por favor escoga una fecha de nacimiento válida</div>
+    </div>
+    <div class="form-group col-md-8">
+    </div>
+    <div class="form-group col-md-4">
+      <label>
+        <span>Correo electrónico</span><br>
+        <input type="text" placeholder="Correo electronico" formControlName="email" class="form-control" #email>
+        <div style="color: #f00;" *ngIf="angForm.get('email').hasError('required') && angForm.get('email').touched">Por favor escriba un correo electrónico válido</div>
+      </label>
+    </div>
+    <div class="form-group col-md-8">
+      <label><strong>Tener en cuenta:</strong></label><br>
+      <p>El correo electronico será su usuario para acceder a su cuenta</p>
+    </div>
+    <div class="form-group col-md-12">
+      <label>
+        <span>Contraseña</span><br>
+        <input type="password" placeholder="Contraseña" formControlName="password" class="form-control" #password>
+        <div style="color: #f00;" *ngIf="angForm.get('password').hasError('required') && angForm.get('password').touched">Por favor escriba una contraseña válida</div>
+      </label>
+    </div>
+    <div class="form-group col-md-4">
+      <label>
+        <span>Confirmar Contraseña</span><br>
+        <input type="password" placeholder="Confirmar Contraseña" formControlName="confirmpassword" class="form-control" #confirmpassword>
+        <div style="color: #f00;" *ngIf="angForm.get('confirmpassword').hasError('required') && angForm.get('confirmpassword').touched">Por favor repita la contraseña</div>
+      </label>
+    </div>
+    <div class="form-group col-md-8">
+      <label>
+        <label><strong>La contraseña debe contener:</strong></label><br>
+        <p>8 a 20 caracteres, Números, Caracteres especiales como #$%&'()*+;/\~_</p> 
+      </label>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <button class="btn btn-primary col-md-12" type="submit" value="submit" (click)="onClickSubmit(nombre.value,primerapellido.value,
+        segundoapellido.value,digitosSSN.value,codigopostal.value,fechanacimiento.value,email.value, password.value,confirmpassword.value)">Registrar</button>
+      </div>
+    </div>
+  </form>
+  
+</div>
